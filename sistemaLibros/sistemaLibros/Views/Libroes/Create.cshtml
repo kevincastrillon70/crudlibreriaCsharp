@@ -1,0 +1,60 @@
+﻿@model sistemaLibros.Models.Libro
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Crear Libro</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Titulo" class="control-label"></label>
+                    <input asp-for="Titulo" class="form-control" />
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Autor" class="control-label"></label>
+                    <input asp-for="Autor" class="form-control" />
+                    <span asp-validation-for="Autor" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Genero" class="control-label"></label>
+                    <input asp-for="Genero" class="form-control" />
+                    <span asp-validation-for="Genero" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Fechapublicacion" class="control-label"></label>
+                    <input type="date" asp-for="Fechapublicacion" class="form-control" />
+                    <span asp-validation-for="Fechapublicacion" class="text-danger"></span>
+                </div>
+            </div>
+            <hr class="m-2" />
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Create" class="btn btn-primary w-100" />
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-secondary w-100" asp-action="Index">Volver a la lista</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
